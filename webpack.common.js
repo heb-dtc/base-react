@@ -24,6 +24,12 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.png$/i,
+        use: {
+          loader: 'url-loader',
+        },
+      },
     ],
   },
   resolve: {
@@ -35,11 +41,11 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
-  new webpack.HotModuleReplacementPlugin(),
-  new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Base react',
       template: './src/index.html',
     }),
-],
+  ],
 };
